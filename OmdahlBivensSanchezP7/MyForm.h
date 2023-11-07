@@ -12,8 +12,6 @@ Inspiration for the art: Nier Replicant*/
 
 #include "CrapsGame.h"
 #include "UtilityFunctions.h"
-#include <tuple>
-#include "CrapsGame.h"
 
 namespace OmdahlBivensSanchezP7 {
 
@@ -27,7 +25,7 @@ namespace OmdahlBivensSanchezP7 {
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
-
+	
 	//class
 	CrapsGame game;
 
@@ -39,11 +37,11 @@ namespace OmdahlBivensSanchezP7 {
 			InitializeComponent();
 
 			//check if log was opened or not
-			//if (!game.IsLogOpen())
-			//{
-			//	//message to user that log did not open
-			//}
-
+			if (!game.IsTheLogOpen())
+			{
+				//message to user that log did not open
+				
+			}
 
 			//
 			//TODO: Add the constructor code here
@@ -106,7 +104,7 @@ namespace OmdahlBivensSanchezP7 {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -387,43 +385,51 @@ namespace OmdahlBivensSanchezP7 {
 
 	private: System::Void GameRules_Click(System::Object^ sender, System::EventArgs^ e) {
 		//get managed String for the games rules and show in a messageBox using game.GameRules();
-		MessageBox::Show("Temp");
-		//MessageBox::Show(gcnew String(game.GameRules().c_str()));
+		//MessageBox::Show("Temp");
+		MessageBox::Show(gcnew String(game.GetRules().c_str()));
 
 	}
 
 	private: System::Void RollD6Button_Click(System::Object^ sender, System::EventArgs^ e) {
 		bool pointRound{ false };
-		//int i{0], j{0];
-		int i{ 0 }, j{ 0 };
+		int i{0}, j{0};
+		
+		//roll the dice using ThrowTheDice()
+		game.ThrowTheDice();
 
 		//checks if the player is in the game or in the Point Round
 		//uses game.GetPoint() to get the info. true for point round, false if not
-		//pointRound = game.GetPoint();
+		pointRound = game.GetPoint();
 
-		////roll the dice using ThrowTheDice()
-		//game.ThrowTheDice();
+		//use tuple to get the dice number and unpack it
+		auto tupeN = game.GetTheDice();
+		tie(i, j) = tupeN;
 
-		////use tuple to get the dice number and unpack it
-		//auto tupeN = game.GetTheDice();
-		//tie(i, j) = tupeN;
+		int total = i + j;
 
-		//int total = i + j;
-
-		////shows the dice for when the player roll the dice
-		//showDice();
+		//shows the dice for when the player roll the dice
+		showDice();
 
 		//crate a string to show the results to the player depending if it is a point round or not
 		//include the balance as well
+		if (pointRound)
+		{
+			GameStatus->Text = gcnew String(game.PlayPointRound().c_str());
+		}
+		else
+		{
+			GameStatus->Text = gcnew String(game.MakeYourPlay().c_str());
+		}
 
-
+		//show the balance of the player
+		PlayerBalance->Text = "Your balance:\r\n" + game.GetBalance();
 	}
 	private: System::Void showDice() {
 		int d6A{ 0 }, d6B{ 0 };
 
 		//hide the idle Dice image once the dice is being shown
-		IdleDice->Image = Image::FromFile("");
-
+		//IdleDice->Image = Image::FromFile("");
+	
 		//use tuple to get the dice images.
 		auto tupeI = game.GetTheDice();
 
@@ -431,7 +437,8 @@ namespace OmdahlBivensSanchezP7 {
 		d6A = get<0>(tupeI);
 		d6B = get<1>(tupeI);
 
-		//calculate the total of both
+		//calculate the total of both dice
+
 
 		//set the image info
 		d6Left->Image = Image::FromFile(".\\die" + Convert::ToString(d6A) + "weiss.png");
@@ -441,44 +448,38 @@ namespace OmdahlBivensSanchezP7 {
 
 	private: System::Void PlayAgainBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//resets the game to its default values
-
-
+		game.ResetGame();
+		GameStatus->Text = "";
 	}
 
 	private: System::Void DonePlayingBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//displays a summary using game.GetSummary() and calls GameOver()
-		game.GetSummary();
+		GameStatus->Text = gcnew String(game.GetSummary().c_str());
 		game.GameOver();
-
 	}
 
 	private: System::Void ReadyButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		bool isBet{ false };
-
-		//convert bet text from user to an number
-		//PlayerBetTxtBox;
-
-
-		////get the name of the user
 		string name;
-		To_string(PlayerNameTxtBox->Text, name);
-		game.SetName(name);
-
 
 		//if successful, use SetName() and SetBet() methods from CrapsGame class to the there values
 
+		//get the name of the user
+		To_string(PlayerNameTxtBox->Text, name);
+		game.SetName(name);
 
+		//convert bet text from user to an number
 		//SetBet() is a bool check if the bet is valid
 		isBet = game.SetBet(Convert::ToInt32(PlayerBetTxtBox->Text));
 
 		//if it is valid send a message to the GameSatus
-		if (isBet == true)
+		if (isBet)
 		{
 			//it will greet the player using there name and shows their bet and asks the player to
 			//start playing by pressing Roll the Dice
-			GameStatus->Text = "Hello ";
-
+			GameStatus->Text = "Hello " + gcnew String(game.GetName().c_str()) + ",\n you have placed a bet of " + PlayerBetTxtBox->Text +
+							".\n Please press 'Roll the Dice' to start playing.";
 		};
 	}
-	};
+};
 }

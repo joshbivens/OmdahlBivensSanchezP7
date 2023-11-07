@@ -36,10 +36,10 @@ CrapsGame::CrapsGame()
 string CrapsGame::GetSummary()
 {
 	stringstream ss;
-	ss << "Hello " << data.GetName() << ","
+	ss << "\nHello " << data.GetName() << ","
 		<< "\r\nYour beginning balance was $200"
 		<< "\r\nYou won " << data.GetNumWon() << " and lost " << data.GetNumLost() << " games."
-		<< "\r\nYour final balance is " << bank.GetBalance() << endl;
+		<< "\r\nYour final balance is $" << bank.GetBalance() << endl;
 
 	return ss.str();
 }
@@ -66,7 +66,7 @@ string CrapsGame::MakeYourPlay()
 		data.IncrementNumLost();
 		bank.UpdateBalance(false);
 		ResetGame();
-		result = "You lost!\nYour balance is " + to_string(bank.GetBalance());
+		result = "You lost!\nYour balance is $" + to_string(bank.GetBalance()) + "\n";
 	}
 	else if (total == 7 || total == 11)
 	{
@@ -74,13 +74,13 @@ string CrapsGame::MakeYourPlay()
 		data.IncrementNumWon();
 		bank.UpdateBalance(true);
 		ResetGame();
-		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
+		result = "You won!\nYour balance is $" + to_string(bank.GetBalance()) + "\n";
 	}
 	else // If not win/lose, moves to point round
 	{
 		pointRound = true;
 		point = total;
-		result = "You have to play the point round!";
+		result = "You have to play the point round!\n";
 	}
 
 
@@ -102,7 +102,7 @@ string CrapsGame::PlayPointRound()
 		data.IncrementNumWon();
 		bank.UpdateBalance(true);
 		ResetGame();
-		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
+		result = "\nYou won!\nYour balance is $" + to_string(bank.GetBalance());
 	}
 	else if (total == 7)
 	{
@@ -110,11 +110,11 @@ string CrapsGame::PlayPointRound()
 		data.IncrementNumLost();
 		bank.UpdateBalance(false);
 		ResetGame();
-		result = "You lost!\nYour balance is " + to_string(bank.GetBalance());
+		result = "\nYou lost!\nYour balance is $" + to_string(bank.GetBalance());
 	}
 	else
 	{
-		result = "Roll again!";
+		result = "Roll again!\n";
 	}
 
 	log.WriteLog(result);
