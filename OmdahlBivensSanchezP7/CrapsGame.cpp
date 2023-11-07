@@ -66,7 +66,7 @@ string CrapsGame::MakeYourPlay()
 		PlayerLoses();
 		data.IncrementNumLost();
 		bank.UpdateBalance(false);
-		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
+		result = "You lost!\nYour balance is " + to_string(bank.GetBalance());
 		log.WriteLog(result);
 	}
 	else if (total == 7 || total == 11)
@@ -74,7 +74,7 @@ string CrapsGame::MakeYourPlay()
 		PlayerWins();
 		data.IncrementNumWon();
 		bank.UpdateBalance(true);
-		result = "You lost\nYour balance is " + to_string(bank.GetBalance());
+		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
 		log.WriteLog(result);
 	}
 	else // If not win/lose, moves to point round
@@ -106,7 +106,7 @@ string CrapsGame::PlayPointRound()
 	{
 		PlayerLoses();
 		data.IncrementNumLost();
-		result = "You lost\nYour balance is " + to_string(bank.GetBalance());
+		result = "You lost!\nYour balance is " + to_string(bank.GetBalance());
 		log.WriteLog(result);
 	}
 
