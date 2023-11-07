@@ -1,6 +1,9 @@
 //Ferreol Sanchez-Haro fsanchezharo@cnm.edu
 //Program 7 - Craps Game
 //Dice.h
+
+
+//Programer: Ferreol Sanchez
 #ifndef DICE_H
 #define DICE_H
 

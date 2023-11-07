@@ -1,6 +1,8 @@
 //Ferreol Sanchez-Haro fsanchezharo@cnm.edu
 //Program 7 - Craps Game
 //MoneyCenter.cpp
+
+//Programer: Ferreol Sanchez
 #include "MoneyCenter.h"
 
 MoneyCenter::MoneyCenter()
@@ -13,8 +15,10 @@ void MoneyCenter::SetInitialBalance(int dollars)
 	balance = dollars;
 }
 
-bool MoneyCenter::SetBet(int bet)
+bool MoneyCenter::SetBet(int playerBet)
 {
+	bet = playerBet;
+
 	if(bet <= balance)
 	{
 		return true;
@@ -51,5 +55,6 @@ string MoneyCenter::Writelog()
 	string log;
 
 	log = "Player bet: " + to_string(bet) + "\r\n";
+
 	return log;
 }

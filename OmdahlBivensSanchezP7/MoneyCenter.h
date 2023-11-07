@@ -2,6 +2,8 @@
 //Program 7 - Craps Game
 //MoneyCenter.h
 
+
+//Programer: Ferreol Sanchez
 #ifndef MONEYCENTER_H
 #define MONEYCENTER_H
 

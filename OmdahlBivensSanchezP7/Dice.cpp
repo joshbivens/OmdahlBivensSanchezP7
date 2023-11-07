@@ -1,6 +1,9 @@
 //Ferreol Sanchez-Haro fsanchezharo@cnm.edu
 //Program 7 - Craps Game
 //Dice.cpp
+
+
+//Programer: Ferreol Sanchez
 #include "Dice.h"
 
 Dice::Dice()

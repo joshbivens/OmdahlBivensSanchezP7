@@ -10,9 +10,10 @@ Inspiration for the art: Nier Replicant*/
 
 #pragma once
 
-#include "CrapsGame.h"
+#include "CrapsGame"
 #include "UtilityFunctions.h"
 #include <tuple>
+#include "CrapsGame.h"
 
 namespace OmdahlBivensSanchezP7 {
 
