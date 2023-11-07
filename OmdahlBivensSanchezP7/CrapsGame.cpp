@@ -65,8 +65,7 @@ string CrapsGame::MakeYourPlay()
 	int total{ 0 };
 	total = dice.GetValue();
 
-	// Set bet
-	//bank.SetBet(10);
+	// Write the bet to log
 	log.WriteLog(bank.Writelog());
 
 	// Then look at rules to see how the player did
@@ -75,6 +74,7 @@ string CrapsGame::MakeYourPlay()
 		PlayerLoses();
 		data.IncrementNumLost();
 		bank.UpdateBalance(false);
+		ResetGame();
 		result = "You lost!\nYour balance is " + to_string(bank.GetBalance());
 		log.WriteLog(result);
 	}
@@ -83,6 +83,7 @@ string CrapsGame::MakeYourPlay()
 		PlayerWins();
 		data.IncrementNumWon();
 		bank.UpdateBalance(true);
+		ResetGame();
 		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
 		log.WriteLog(result);
 	}
@@ -91,7 +92,7 @@ string CrapsGame::MakeYourPlay()
 		pointRound = true;
 		point = total;
 		result = "You have to play the point round!";
-		log.WriteLog(result);
+		log.WriteLog(result); // Should this be written to log?
 	}
 
 	// Create message to user: "You have to play the point round!"
@@ -108,6 +109,8 @@ string CrapsGame::PlayPointRound()
 	{
 		PlayerWins();
 		data.IncrementNumWon();
+		bank.UpdateBalance(true);
+		ResetGame();
 		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
 		log.WriteLog(result);
 	}
@@ -115,7 +118,14 @@ string CrapsGame::PlayPointRound()
 	{
 		PlayerLoses();
 		data.IncrementNumLost();
+		bank.UpdateBalance(false);
+		ResetGame();
 		result = "You lost!\nYour balance is " + to_string(bank.GetBalance());
+		log.WriteLog(result);
+	}
+	else
+	{
+		result = "Roll again!";
 		log.WriteLog(result);
 	}
 
