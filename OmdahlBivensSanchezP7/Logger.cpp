@@ -51,7 +51,8 @@ void Logger::FileName()
 // For the MoneyCenter to write the initial balance
 void Logger::Startlog(double initialBalance)
 {
-	output << "Initial Balance: " << initialBalance << endl;
+	output << "This is the log of your Craps game.\n" 
+		<< "Initial Balance : " << initialBalance << endl;
 }
 
 // 

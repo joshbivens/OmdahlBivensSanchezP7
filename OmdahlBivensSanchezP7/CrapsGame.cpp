@@ -77,6 +77,7 @@ string CrapsGame::MakeYourPlay()
 	{
 		pointRound = true;
 		point = total;
+		PlayPointRound();
 		log.WriteLog(GetSummary());
 	}
 
