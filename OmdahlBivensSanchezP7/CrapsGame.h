@@ -2,6 +2,8 @@
 #define CRAPSGAME_H
 
 #include "Logger.h"
+#include "Dice.h"
+#include "MoneyCenter.h"
 
 #include <string>
 
