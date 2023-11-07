@@ -1,3 +1,12 @@
+// Joshua Bivens
+// jbivens1@cnm.edu
+// OmdahlBivensSanchezP7
+// Group Project 7 - The Craps Game
+
+// CrapsGame.h
+
+// Programmer: Joshua Bivens
+
 #ifndef CRAPSGAME_H
 #define CRAPSGAME_H
 

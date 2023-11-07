@@ -1,3 +1,12 @@
+// Joshua Bivens
+// jbivens1@cnm.edu
+// OmdahlBivensSanchezP7
+// Group Project 7 - The Craps Game
+
+// CrapsGame.cpp
+
+// Programmer: Joshua Bivens
+
 #include "CrapsGame.h"
 
 void CrapsGame::PlayerWins()
@@ -28,9 +37,9 @@ string CrapsGame::GetSummary()
 {
 	stringstream ss;
 	ss << "Hello " << data.GetName() << ","
-		<< "\nYour beginning balance was $200"
-		<< "\nYou won " << data.GetNumWon() << " and lost " << data.GetNumLost() << " games."
-		<< "\nYour final balance is " << bank.GetBalance() << endl;
+		<< "\r\nYour beginning balance was $200"
+		<< "\r\nYou won " << data.GetNumWon() << " and lost " << data.GetNumLost() << " games."
+		<< "\r\nYour final balance is " << bank.GetBalance() << endl;
 
 	return ss.str();
 }

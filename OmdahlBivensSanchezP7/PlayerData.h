@@ -1,3 +1,12 @@
+// Joshua Bivens
+// jbivens1@cnm.edu
+// OmdahlBivensSanchezP7
+// Group Project 7 - The Craps Game
+
+// PlayerData.h
+
+// Programmer: Joshua Bivens
+
 #ifndef PLAYERDATA_H
 #define PLAYERDATA_H
 

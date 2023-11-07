@@ -1,3 +1,12 @@
+// Joshua Bivens
+// jbivens1@cnm.edu
+// OmdahlBivensSanchezP7
+// Group Project 7 - The Craps Game
+
+// Logger.h
+
+// Programmer: Joshua Bivens
+
 #ifndef LOGGER_H
 #define LOGGER_H
 
