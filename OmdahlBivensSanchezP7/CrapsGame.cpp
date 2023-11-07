@@ -76,7 +76,6 @@ string CrapsGame::MakeYourPlay()
 		bank.UpdateBalance(false);
 		ResetGame();
 		result = "You lost!\nYour balance is " + to_string(bank.GetBalance());
-		log.WriteLog(result);
 	}
 	else if (total == 7 || total == 11)
 	{
@@ -85,15 +84,16 @@ string CrapsGame::MakeYourPlay()
 		bank.UpdateBalance(true);
 		ResetGame();
 		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
-		log.WriteLog(result);
 	}
 	else // If not win/lose, moves to point round
 	{
 		pointRound = true;
 		point = total;
 		result = "You have to play the point round!";
-		log.WriteLog(result); // Should this be written to log?
 	}
+
+
+	log.WriteLog(result);
 
 	// Create message to user: "You have to play the point round!"
 	return result;
@@ -112,7 +112,6 @@ string CrapsGame::PlayPointRound()
 		bank.UpdateBalance(true);
 		ResetGame();
 		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
-		log.WriteLog(result);
 	}
 	else if (total == 7)
 	{
@@ -121,13 +120,13 @@ string CrapsGame::PlayPointRound()
 		bank.UpdateBalance(false);
 		ResetGame();
 		result = "You lost!\nYour balance is " + to_string(bank.GetBalance());
-		log.WriteLog(result);
 	}
 	else
 	{
 		result = "Roll again!";
-		log.WriteLog(result);
 	}
+
+	log.WriteLog(result);
 
 	// Create string with results
 	return result;

@@ -460,17 +460,19 @@ namespace OmdahlBivensSanchezP7 {
 
 
 		////get the name of the user
-		//PlayerNameTxtBox;
+		string name;
+		To_string(PlayerNameTxtBox->Text, name);
+		game.SetName(name);
 
 
 		//if successful, use SetName() and SetBet() methods from CrapsGame class to the there values
 
 
 		//SetBet() is a bool check if the bet is valid
-		//isBet = game.SetBet();
+		isBet = game.SetBet(Convert::ToInt32(PlayerBetTxtBox->Text));
 
 		//if it is valid send a message to the GameSatus
-		if (isBet = true)
+		if (isBet == true)
 		{
 			//it will greet the player using there name and shows their bet and asks the player to
 			//start playing by pressing Roll the Dice
