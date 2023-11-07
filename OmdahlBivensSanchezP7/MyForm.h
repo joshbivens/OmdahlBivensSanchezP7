@@ -10,7 +10,7 @@ Inspiration for the art: Nier Replicant*/
 
 #pragma once
 
-#include "CrapsGame"
+#include "CrapsGame.h"
 #include "UtilityFunctions.h"
 #include <tuple>
 #include "CrapsGame.h"
