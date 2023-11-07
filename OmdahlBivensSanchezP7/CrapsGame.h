@@ -40,7 +40,7 @@ public:
 
 	//setters or mutators change the values of the class variables
 	void SetName(string name) { data.SetName(name); }
-	bool SetBet(double bet) { return bank.SetBet(bet); }
+	bool SetBet(int bet) { return bank.SetBet(bet); }
 
 	//Get methods do not do any calculations - they return a value 
 	string GetRules() { return rules; }

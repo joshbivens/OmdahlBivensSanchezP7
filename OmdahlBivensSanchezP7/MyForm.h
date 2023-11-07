@@ -10,7 +10,7 @@ Inspiration for the art: Nier Replicant*/
 
 #pragma once
 
-#include "CrapsGame"
+#include "CrapsGame.h"
 #include "UtilityFunctions.h"
 #include <tuple>
 
@@ -398,19 +398,19 @@ namespace OmdahlBivensSanchezP7 {
 
 		//checks if the player is in the game or in the Point Round
 		//uses game.GetPoint() to get the info. true for point round, false if not
-		pointRound = game.GetPoint();
+		//pointRound = game.GetPoint();
 
-		//roll the dice using ThrowTheDice()
-		game.ThrowTheDice();
+		////roll the dice using ThrowTheDice()
+		//game.ThrowTheDice();
 
-		//use tuple to get the dice number and unpack it
-		auto tupeN = game.GetTheDice();
-		tie(i, j) = tupeN;
+		////use tuple to get the dice number and unpack it
+		//auto tupeN = game.GetTheDice();
+		//tie(i, j) = tupeN;
 
-		int total = i + j;
+		//int total = i + j;
 
-		//shows the dice for when the player roll the dice
-		showDice();
+		////shows the dice for when the player roll the dice
+		//showDice();
 
 		//crate a string to show the results to the player depending if it is a point round or not
 		//include the balance as well
@@ -418,7 +418,7 @@ namespace OmdahlBivensSanchezP7 {
 
 	}
 	private: System::Void showDice() {
-		int d6A{ 0 }, int d6B{ 0 };
+		int d6A{ 0 }, d6B{ 0 };
 
 		//hide the idle Dice image once the dice is being shown
 		IdleDice->Image = Image::FromFile("");
@@ -455,19 +455,18 @@ namespace OmdahlBivensSanchezP7 {
 		bool isBet{ false };
 
 		//convert bet text from user to an number
-		PlayerBetTxtBox;
+		//PlayerBetTxtBox;
 
 
-		//get the name of the user
-		PlayerNameTxtBox;
+		////get the name of the user
+		//PlayerNameTxtBox;
 
 
 		//if successful, use SetName() and SetBet() methods from CrapsGame class to the there values
-		game.SetName() = PlayerNameTxtBox;
-		game.SetBet() = PlayerBetTxtBox;
+
 
 		//SetBet() is a bool check if the bet is valid
-		isBet = game.SetBet();
+		//isBet = game.SetBet();
 
 		//if it is valid send a message to the GameSatus
 		if (isBet = true)

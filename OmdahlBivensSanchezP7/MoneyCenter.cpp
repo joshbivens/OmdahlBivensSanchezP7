@@ -5,12 +5,12 @@
 
 MoneyCenter::MoneyCenter()
 {
-	//WriteBeginFile();
+	SetInitialBalance(200);
 }
 
 void MoneyCenter::SetInitialBalance(int dollars)
 {
-	balance = 200;
+	balance = dollars;
 }
 
 bool MoneyCenter::SetBet(int bet)
