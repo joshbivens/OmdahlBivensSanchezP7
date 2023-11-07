@@ -17,10 +17,10 @@ void MoneyCenter::SetInitialBalance(int dollars)
 
 bool MoneyCenter::SetBet(int playerBet)
 {
-	bet = playerBet;
 
 	if(bet <= balance)
 	{
+		bet = playerBet;
 		return true;
 	}
 	else
@@ -32,6 +32,7 @@ bool MoneyCenter::SetBet(int playerBet)
 void MoneyCenter::UpdateBalance(bool didWin)
 {
 	bool isInRange = SetBet(bet);
+
 	if (isInRange == true)
 	{
 		if (didWin == true)
