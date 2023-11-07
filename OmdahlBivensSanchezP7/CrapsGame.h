@@ -2,13 +2,15 @@
 #define CRAPSGAME_H
 
 #include "Logger.h"
-#include "Dice.h"
+#include "PlayerData.h"
 #include "MoneyCenter.h"
+#include "Dice.h"
 
 #include <string>
 
 using namespace std;
 
+// PASSTHRU/CONTROLLER CLASS
 class CrapsGame
 {
 private:
@@ -20,15 +22,17 @@ private:
 	Logger log; //Logger object, handles the log file
 	MoneyCenter bank; //manages the player’s money 
 	Dice dice; //handles getting the roll of the dice 
-	PlayData data; // a struct that contains the player’s data.
+	PlayerData data; // a struct that contains the player’s data.
 	void PlayerWins(); //A utility method 
 	void PlayerLoses(); //Another utility method
 
 public:
 	CrapsGame(); //create the rules string here.
+
 	//setters or mutators change the values of the class variables
 	bool SetBet(double bet) { return bank.SetBet(bet); }
 	void SetName(string name) { data.SetName(name); }
+
 	//Get methods do not do any calculations - they return a value 
 	string GetRules() { return rules; }
 	string GetSummary();
@@ -37,6 +41,7 @@ public:
 	bool GetPoint() { return pointRound; }
 	bool IsTheLogOpen() { return log.IsLogOpen(); }
 	tuple<int, int> GetTheDice() { return dice.GetDice(); }
+
 	//class methods
 	void ThrowTheDice();
 	string MakeYourPlay(); //Roll the dice, and what happens?
@@ -46,3 +51,4 @@ public:
 };
 
 #endif
+

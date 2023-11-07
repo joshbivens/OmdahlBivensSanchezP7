@@ -115,7 +115,7 @@
     <ClInclude Include="CrapsGame.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Logger.h" />
-    <ClInclude Include="MoneyCenter.h" />
+    <ClInclude Include="PlayerData.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CrapsGame.cpp" />
