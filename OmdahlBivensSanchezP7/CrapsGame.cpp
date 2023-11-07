@@ -47,15 +47,6 @@ string CrapsGame::GetSummary()
 void CrapsGame::ThrowTheDice()
 {
 	dice.ThrowDice();
-
-	if (pointRound)
-	{
-		PlayPointRound();
-	}
-	else
-	{
-		MakeYourPlay();
-	}
 }
 
 // Contains the logic of what wins/loses in the round
