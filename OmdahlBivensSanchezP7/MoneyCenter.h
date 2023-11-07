@@ -1,9 +1,9 @@
 //Ferreol Sanchez-Haro fsanchezharo@cnm.edu
 //Program 7 - Craps Game
 //MoneyCenter.h
-#include <string>
-#include <string>
 
+
+//Programer: Ferreol Sanchez
 #ifndef MONEYCENTER_H
 #define MONEYCENTER_H
 
