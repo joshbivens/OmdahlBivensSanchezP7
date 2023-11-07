@@ -5,6 +5,8 @@
 //Programer: Ferreol Sanchez
 #include "MoneyCenter.h"
 
+int MoneyCenter::balance = 0;
+
 MoneyCenter::MoneyCenter()
 {
 	SetInitialBalance(200);
