@@ -30,8 +30,8 @@ public:
 	CrapsGame(); //create the rules string here.
 
 	//setters or mutators change the values of the class variables
-	bool SetBet(double bet) { return bank.SetBet(bet); }
 	void SetName(string name) { data.SetName(name); }
+	bool SetBet(double bet) { return bank.SetBet(bet); }
 
 	//Get methods do not do any calculations - they return a value 
 	string GetRules() { return rules; }

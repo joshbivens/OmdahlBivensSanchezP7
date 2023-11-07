@@ -26,22 +26,13 @@ CrapsGame::CrapsGame()
 
 string CrapsGame::GetSummary()
 {
-	if (won)
-	{
-		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
-	}
-	else
-	{
-		result = "You lost\nYour balance is " + to_string(bank.GetBalance());
-	}
+	stringstream ss;
+	ss << "Hello " << data.GetName() << ","
+		<< "\nYour beginning balance was $200"
+		<< "\nYou won " << data.GetNumWon() << " and lost " << data.GetNumLost() << " games."
+		<< "\nYour final balance is " << bank.GetBalance() << endl;
 
-	if (pointRound)
-	{
-		result = "You have to play the point round!";
-	}
-
-	// Return string with results
-	return result;
+	return ss.str();
 }
 
 void CrapsGame::ThrowTheDice()
@@ -64,47 +55,55 @@ string CrapsGame::MakeYourPlay()
 	if (total == 2 || total == 3 || total == 12)
 	{
 		PlayerLoses();
+		data.IncrementNumLost();
 		bank.UpdateBalance(false);
-		log.WriteLog(GetSummary());
+		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
+		log.WriteLog(result);
 	}
 	else if (total == 7 || total == 11)
 	{
 		PlayerWins();
+		data.IncrementNumWon();
 		bank.UpdateBalance(true);
-		log.WriteLog(GetSummary());
+		result = "You lost\nYour balance is " + to_string(bank.GetBalance());
+		log.WriteLog(result);
 	}
 	else // If not win/lose, moves to point round
 	{
 		pointRound = true;
 		point = total;
 		PlayPointRound();
-		log.WriteLog(GetSummary());
+		result = "You have to play the point round!";
+		log.WriteLog(result);
 	}
 
 	// Create message to user: "You have to play the point round!"
-	return GetSummary();
+	return result;
 }
 
 // Contains the logic of what wins/loses in the point round
 string CrapsGame::PlayPointRound()
 {
-	// First call Dice.GetValue() to get the value of the dice roll
 	int total{ 0 };
 	total = dice.GetValue();
 
 	if (total == point)
 	{
 		PlayerWins();
-		log.WriteLog(GetSummary());
+		data.IncrementNumWon();
+		result = "You won!\nYour balance is " + to_string(bank.GetBalance());
+		log.WriteLog(result);
 	}
 	else if (total == 7)
 	{
 		PlayerLoses();
-		log.WriteLog(GetSummary());
+		data.IncrementNumLost();
+		result = "You lost\nYour balance is " + to_string(bank.GetBalance());
+		log.WriteLog(result);
 	}
 
 	// Create string with results
-	return GetSummary();
+	return result;
 }
 
 void CrapsGame::ResetGame()
@@ -117,11 +116,6 @@ void CrapsGame::ResetGame()
 
 void CrapsGame::GameOver()
 {
-	stringstream ss;
-	ss << "Hello " << data.GetName() << ","
-		<< "\nYour beginning balance was $200"
-		<< "\nYou won " << data.GetNumWon() << " and lost " << data.GetNumLost() << " games."
-		<< "\nYour final balance is " << bank.GetBalance() << endl;
-
-	log.CloseLog(ss.str());
+	// Write summary to log file and close
+	log.CloseLog(GetSummary());
 }
