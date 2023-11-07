@@ -15,7 +15,7 @@ void MoneyCenter::SetInitialBalance(int dollars)
 
 bool MoneyCenter::SetBet(int bet)
 {
-	if(bet >= balance)
+	if(bet <= balance)
 	{
 		return true;
 	}
@@ -23,7 +23,6 @@ bool MoneyCenter::SetBet(int bet)
 	{
 		return false;
 	}
-	
 }
 
 void MoneyCenter::UpdateBalance(bool didWin)
@@ -49,5 +48,8 @@ int MoneyCenter::GetBalance()
 
 string MoneyCenter::Writelog()
 {
-	return string();
+	string log;
+
+	log = "Player bet: " + to_string(bet) + "\r\n";
+	return log;
 }
