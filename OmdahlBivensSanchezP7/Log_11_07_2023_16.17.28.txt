@@ -1,3 +1,0 @@
-Name: 
-Program Name: Craps Game
-Hello , this is the log of your Craps Games.

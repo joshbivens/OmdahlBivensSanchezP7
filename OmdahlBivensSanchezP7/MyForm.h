@@ -37,11 +37,12 @@ namespace OmdahlBivensSanchezP7 {
 			InitializeComponent();
 
 			//check if log was opened or not
-			//if (!game.IsLogOpen())
-			//{
-			//	//message to user that log did not open
-			//}
-
+			if (!game.IsTheLogOpen())
+			{
+				//message to user that log did not open
+				GameStatus->Text = "Sorry! The log file has not opened properly!";
+				
+			}
 
 			//
 			//TODO: Add the constructor code here
@@ -391,14 +392,10 @@ namespace OmdahlBivensSanchezP7 {
 		auto tupeN = game.GetTheDice();
 		tie(i, j) = tupeN;
 
-		////use tuple to get the dice number and unpack it
-		//auto tupeN = game.GetTheDice();
-		//tie(i, j) = tupeN;
+		int total = i + j;
 
-		//int total = i + j;
-
-		////shows the dice for when the player roll the dice
-		//showDice();
+		//shows the dice for when the player roll the dice
+		showDice();
 
 		//crate a string to show the results to the player depending if it is a point round or not
 		//include the balance as well
@@ -411,21 +408,17 @@ namespace OmdahlBivensSanchezP7 {
 			GameStatus->Text = gcnew String(game.MakeYourPlay().c_str());
 		}
 
+		PlayerBalance->Text = "Your balance is: \n$" + gcnew String(game.GetBalance().ToString()) + ".00";
 	}
 	private: System::Void showDice() {
 		int d6A{ 0 }, d6B{ 0 };
-
-		//hide the idle Dice image once the dice is being shown
-		IdleDice->Image = Image::FromFile("");
-
+	
 		//use tuple to get the dice images.
 		auto tupeI = game.GetTheDice();
 
 		//unpack the tuple into two components, d6A and d6B into the two dice
 		d6A = get<0>(tupeI);
 		d6B = get<1>(tupeI);
-
-		//calculate the total of both
 
 		//set the image info
 		d6Left->Image = Image::FromFile(".\\die" + Convert::ToString(d6A) + "weiss.png");
@@ -435,7 +428,9 @@ namespace OmdahlBivensSanchezP7 {
 
 	private: System::Void PlayAgainBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//resets the game to its default values
-
+		game.ResetGame();
+		GameStatus->Text = "";
+		PlayerBalance->Text = "Your balance is: \n$200.00";
 
 	}
 
@@ -443,6 +438,7 @@ namespace OmdahlBivensSanchezP7 {
 		//displays a summary using game.GetSummary() and calls GameOver()
 		GameStatus->Text = gcnew String(game.GetSummary().c_str());
 		game.GameOver();
+		
 
 	}
 
@@ -465,8 +461,8 @@ namespace OmdahlBivensSanchezP7 {
 		{
 			//it will greet the player using there name and shows their bet and asks the player to
 			//start playing by pressing Roll the Dice
-			GameStatus->Text = "Hello ";
-
+			GameStatus->Text = "Hello " + gcnew String(game.GetName().c_str()) + ",\n you have placed a bet of $" + PlayerBetTxtBox->Text +
+							".\n Please press 'Roll the Dice' to start playing.";
 		};
 	}
 };

@@ -31,6 +31,9 @@ CrapsGame::CrapsGame()
 		"If the sum is anything else, a point is established (the sum of\n"
 		"the dice you rolled) and you continue to roll until you re - roll\n"
 		"the point (you win) or you roll a 7 (you lose).";
+
+	// Start log
+	log.Startlog(bank.GetBalance());
 }
 
 string CrapsGame::GetSummary()
@@ -65,7 +68,6 @@ string CrapsGame::MakeYourPlay()
 		PlayerLoses();
 		data.IncrementNumLost();
 		bank.UpdateBalance(false);
-		ResetGame();
 		result = "You lost!\nYour balance is $" + to_string(bank.GetBalance()) + "\n";
 	}
 	else if (total == 7 || total == 11)
@@ -73,7 +75,6 @@ string CrapsGame::MakeYourPlay()
 		PlayerWins();
 		data.IncrementNumWon();
 		bank.UpdateBalance(true);
-		ResetGame();
 		result = "You won!\nYour balance is $" + to_string(bank.GetBalance()) + "\n";
 	}
 	else // If not win/lose, moves to point round
@@ -82,7 +83,6 @@ string CrapsGame::MakeYourPlay()
 		point = total;
 		result = "You have to play the point round!\n";
 	}
-
 
 	log.WriteLog(result);
 
@@ -101,16 +101,14 @@ string CrapsGame::PlayPointRound()
 		PlayerWins();
 		data.IncrementNumWon();
 		bank.UpdateBalance(true);
-		ResetGame();
-		result = "\nYou won!\nYour balance is $" + to_string(bank.GetBalance());
+		result = "You won!\nYour balance is $" + to_string(bank.GetBalance()) + "\n";
 	}
 	else if (total == 7)
 	{
 		PlayerLoses();
 		data.IncrementNumLost();
 		bank.UpdateBalance(false);
-		ResetGame();
-		result = "\nYou lost!\nYour balance is $" + to_string(bank.GetBalance());
+		result = "You lost!\nYour balance is $" + to_string(bank.GetBalance()) + "\n";
 	}
 	else
 	{
@@ -125,6 +123,7 @@ string CrapsGame::PlayPointRound()
 
 void CrapsGame::ResetGame()
 {
+	bank.SetInitialBalance(200);
 	won = false;
 	pointRound = false;
 	point = 2;

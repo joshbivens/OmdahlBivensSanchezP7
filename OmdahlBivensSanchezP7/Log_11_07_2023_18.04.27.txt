@@ -1,0 +1,50 @@
+Hello 
+Program Name: Craps Game
+This is the log of your Craps game.
+Initial Balance : $200
+
+18:04:35
+Player bet: 50
+
+18:04:35
+You have to play the point round!
+
+18:04:36
+Roll again!
+
+18:04:36
+Roll again!
+
+18:04:37
+Roll again!
+
+18:04:38
+You won!
+Your balance is $250
+
+18:04:41
+You lost!
+Your balance is $200
+
+18:04:44
+Roll again!
+
+18:04:45
+Roll again!
+
+18:04:45
+Roll again!
+
+18:04:46
+Roll again!
+
+18:04:48
+You lost!
+Your balance is $150
+
+
+Hello Josh,
+Your beginning balance was $200
+You won 1 and lost 2 games.
+Your final balance is $150
+

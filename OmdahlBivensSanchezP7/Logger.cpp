@@ -32,9 +32,8 @@ Logger::Logger(string name) : playerName{ name }
 		// Name, Program Name, say Hello to player and call
 		// them by name.
 		// Tell them this is the log of your Craps Games.
-		output << "Name: " << playerName << endl;
+		output << "Hello " << playerName << endl;
 		output << "Program Name: Craps Game" << endl;
-		output << "Hello " << playerName << ", this is the log of your Craps Games." << endl;
 	}
 }
 
@@ -61,7 +60,7 @@ void Logger::FileName()
 void Logger::Startlog(double initialBalance)
 {
 	output << "This is the log of your Craps game.\n" 
-		<< "Initial Balance : " << initialBalance << endl;
+		<< "Initial Balance : $" << initialBalance << "\n" << endl;
 }
 
 // 
@@ -80,7 +79,7 @@ void Logger::CloseLog(string s)
 	output.close();
 
 	// Opens the file in notepad
-	string openfile = "notepade.exe " + filename;
+	string openfile = "notepad.exe " + filename;
 	system(openfile.c_str());
 }
 
