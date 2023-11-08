@@ -37,11 +37,11 @@ namespace OmdahlBivensSanchezP7 {
 			InitializeComponent();
 
 			//check if log was opened or not
-			if (!game.IsTheLogOpen())
-			{
-				//message to user that log did not open
-				
-			}
+			//if (!game.IsLogOpen())
+			//{
+			//	//message to user that log did not open
+			//}
+
 
 			//
 			//TODO: Add the constructor code here
@@ -66,33 +66,19 @@ namespace OmdahlBivensSanchezP7 {
 	private: System::Windows::Forms::ToolStripMenuItem^ GameRules;
 	private: System::Windows::Forms::MenuStrip^ GameRulesMenu;
 	private: System::Windows::Forms::PictureBox^ GameTablePic;
-
 	private: System::Windows::Forms::Button^ RollD6Button;
 	private: System::Windows::Forms::Button^ ReadyButton;
-
-
-
 	private: System::Windows::Forms::Button^ DonePlayingBtn;
-
 	private: System::Windows::Forms::Button^ PlayAgainBtn;
 	private: System::Windows::Forms::Label^ GameStatusLable;
-
 	private: System::Windows::Forms::Label^ PlayerNameLable;
 	private: System::Windows::Forms::Label^ PlayerReadyLable;
-
-
-
-
-
 	private: System::Windows::Forms::Label^ PlayerBetLable;
 	private: System::Windows::Forms::TextBox^ PlayerBetTxtBox;
-
 	private: System::Windows::Forms::TextBox^ PlayerNameTxtBox;
 	private: System::Windows::Forms::PictureBox^ d6Left;
 	private: System::Windows::Forms::PictureBox^ d6Right;
 	private: System::Windows::Forms::PictureBox^ IdleDice;
-
-
 	private: System::Windows::Forms::RichTextBox^ GameStatus;
 	private: System::Windows::Forms::RichTextBox^ PlayerBalance;
 
@@ -341,7 +327,7 @@ namespace OmdahlBivensSanchezP7 {
 			this->PlayerBalance->Name = L"PlayerBalance";
 			this->PlayerBalance->Size = System::Drawing::Size(191, 70);
 			this->PlayerBalance->TabIndex = 19;
-			this->PlayerBalance->Text = L"";
+			this->PlayerBalance->Text = L"Your balance is:\n$200.00";
 			// 
 			// MyForm
 			// 
@@ -405,10 +391,14 @@ namespace OmdahlBivensSanchezP7 {
 		auto tupeN = game.GetTheDice();
 		tie(i, j) = tupeN;
 
-		int total = i + j;
+		////use tuple to get the dice number and unpack it
+		//auto tupeN = game.GetTheDice();
+		//tie(i, j) = tupeN;
 
-		//shows the dice for when the player roll the dice
-		showDice();
+		//int total = i + j;
+
+		////shows the dice for when the player roll the dice
+		//showDice();
 
 		//crate a string to show the results to the player depending if it is a point round or not
 		//include the balance as well
@@ -421,15 +411,13 @@ namespace OmdahlBivensSanchezP7 {
 			GameStatus->Text = gcnew String(game.MakeYourPlay().c_str());
 		}
 
-		//show the balance of the player
-		PlayerBalance->Text = "Your balance:\r\n" + game.GetBalance();
 	}
 	private: System::Void showDice() {
 		int d6A{ 0 }, d6B{ 0 };
 
 		//hide the idle Dice image once the dice is being shown
-		//IdleDice->Image = Image::FromFile("");
-	
+		IdleDice->Image = Image::FromFile("");
+
 		//use tuple to get the dice images.
 		auto tupeI = game.GetTheDice();
 
@@ -437,8 +425,7 @@ namespace OmdahlBivensSanchezP7 {
 		d6A = get<0>(tupeI);
 		d6B = get<1>(tupeI);
 
-		//calculate the total of both dice
-
+		//calculate the total of both
 
 		//set the image info
 		d6Left->Image = Image::FromFile(".\\die" + Convert::ToString(d6A) + "weiss.png");
@@ -448,14 +435,15 @@ namespace OmdahlBivensSanchezP7 {
 
 	private: System::Void PlayAgainBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//resets the game to its default values
-		game.ResetGame();
-		GameStatus->Text = "";
+
+
 	}
 
 	private: System::Void DonePlayingBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//displays a summary using game.GetSummary() and calls GameOver()
 		GameStatus->Text = gcnew String(game.GetSummary().c_str());
 		game.GameOver();
+
 	}
 
 	private: System::Void ReadyButton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -477,8 +465,8 @@ namespace OmdahlBivensSanchezP7 {
 		{
 			//it will greet the player using there name and shows their bet and asks the player to
 			//start playing by pressing Roll the Dice
-			GameStatus->Text = "Hello " + gcnew String(game.GetName().c_str()) + ",\n you have placed a bet of " + PlayerBetTxtBox->Text +
-							".\n Please press 'Roll the Dice' to start playing.";
+			GameStatus->Text = "Hello ";
+
 		};
 	}
 };
