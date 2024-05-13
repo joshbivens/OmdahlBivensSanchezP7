@@ -52,17 +52,27 @@ void CrapsGame::ThrowTheDice()
 	dice.ThrowDice();
 }
 
-// Contains the logic of what wins/loses in the round
+/**
+ * Simulates a round in a game of craps.
+ * 
+ * This function rolls two dice, calculates the total value, logs the bet, 
+ * and then determines the outcome based on the rules of craps. If the total 
+ * is 2, 3, or 12, the player loses; if it's 7 or 11, the player wins. 
+ * Otherwise, it sets up for the point round. Finally, it logs the outcome 
+ * and returns a message to the user indicating the next step in the game.
+ * 
+ * @return A message indicating the result of the round.
+ */
 string CrapsGame::MakeYourPlay()
 {
-	// First call Dice.GetValue() to get the value of the dice roll
+	// First, calls Dice.GetValue() to get the value of the dice roll
 	int total{ 0 };
 	total = dice.GetValue();
 
-	// Write the bet to log
+	// Writes the bet to log
 	log.WriteLog(bank.Writelog());
 
-	// Then look at rules to see how the player did
+	// Then looks at rules to see how the player did
 	if (total == 2 || total == 3 || total == 12)
 	{
 		PlayerLoses();
@@ -85,12 +95,20 @@ string CrapsGame::MakeYourPlay()
 	}
 
 	log.WriteLog(result);
-
-	// Create message to user: "You have to play the point round!"
 	return result;
 }
 
-// Contains the logic of what wins/loses in the point round
+/**
+ * Plays the point round in a game of craps.
+ * 
+ * This function rolls two dice, calculates the total value, and determines 
+ * whether the player wins, loses, or needs to continue the point round. If 
+ * the total matches the point established in the initial round, the player 
+ * wins. If the total is 7, the player loses. Otherwise, the point round 
+ * continues. The function updates game statistics and logs the outcome.
+ * 
+ * @return A message indicating the result of the point round.
+ */
 string CrapsGame::PlayPointRound()
 {
 	int total{ 0 };
@@ -116,8 +134,6 @@ string CrapsGame::PlayPointRound()
 	}
 
 	log.WriteLog(result);
-
-	// Create string with results
 	return result;
 }
 
@@ -130,6 +146,12 @@ void CrapsGame::ResetGame()
 	result = "";
 }
 
+/**
+ * .
+ * 
+ * This function generates a summary of the game's outcomes and writes it 
+ * to the log file. It then closes the log file, concluding the game.
+ */
 void CrapsGame::GameOver()
 {
 	// Write summary to log file and close
