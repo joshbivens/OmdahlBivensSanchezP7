@@ -21,19 +21,10 @@ Logger::Logger(string name) : playerName{ name }
 	output.open(filename.c_str());
 
 	// Check if file opened
-	if (!output.is_open())
+	if (output.is_open())
 	{
 		// If not, set bLogOpen to false
-		bLogOpen = false;
-	}
-	else
-	{
-		// If so, write to file:
-		// Name, Program Name, say Hello to player and call
-		// them by name.
-		// Tell them this is the log of your Craps Games.
-		output << "Hello " << playerName << endl;
-		output << "Program Name: Craps Game" << endl;
+		bLogOpen = true;
 	}
 }
 
@@ -59,8 +50,8 @@ void Logger::FileName()
 // For the MoneyCenter to write the initial balance
 void Logger::Startlog(double initialBalance)
 {
-	output << "This is the log of your Craps game.\n" 
-		<< "Initial Balance : $" << initialBalance << "\n" << endl;
+	output << "This is the log of your Craps game." << endl;
+	output << "Initial Balance : $" << initialBalance << endl;
 }
 
 // 
@@ -68,7 +59,8 @@ void Logger::WriteLog(string s)
 {
 	Time();
 	// Then write timeRightNow and result of game
-	output << timeRightNow << "\n" << s << endl;
+	output << timeRightNow << endl;
+	output << s << endl;
 }
 
 void Logger::CloseLog(string s)

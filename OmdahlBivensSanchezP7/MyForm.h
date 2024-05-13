@@ -128,10 +128,10 @@ namespace OmdahlBivensSanchezP7 {
 			// 
 			// GameRules
 			// 
-			this->GameRules->Font = (gcnew System::Drawing::Font(L"Benguiat", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->GameRules->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->GameRules->Name = L"GameRules";
-			this->GameRules->Size = System::Drawing::Size(138, 25);
+			this->GameRules->Size = System::Drawing::Size(113, 22);
 			this->GameRules->Text = L"Game Rules";
 			this->GameRules->Click += gcnew System::EventHandler(this, &MyForm::GameRules_Click);
 			// 
@@ -141,17 +141,18 @@ namespace OmdahlBivensSanchezP7 {
 			this->GameRulesMenu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->GameRules });
 			this->GameRulesMenu->Location = System::Drawing::Point(0, 0);
 			this->GameRulesMenu->Name = L"GameRulesMenu";
-			this->GameRulesMenu->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
-			this->GameRulesMenu->Size = System::Drawing::Size(1272, 29);
+			this->GameRulesMenu->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
+			this->GameRulesMenu->Size = System::Drawing::Size(954, 26);
 			this->GameRulesMenu->TabIndex = 0;
 			this->GameRulesMenu->Text = L"menuStrip1";
 			// 
 			// GameTablePic
 			// 
 			this->GameTablePic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"GameTablePic.Image")));
-			this->GameTablePic->Location = System::Drawing::Point(0, 31);
+			this->GameTablePic->Location = System::Drawing::Point(0, 25);
+			this->GameTablePic->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->GameTablePic->Name = L"GameTablePic";
-			this->GameTablePic->Size = System::Drawing::Size(1006, 657);
+			this->GameTablePic->Size = System::Drawing::Size(754, 534);
 			this->GameTablePic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->GameTablePic->TabIndex = 1;
 			this->GameTablePic->TabStop = false;
@@ -159,12 +160,13 @@ namespace OmdahlBivensSanchezP7 {
 			// RollD6Button
 			// 
 			this->RollD6Button->BackColor = System::Drawing::Color::Black;
-			this->RollD6Button->Font = (gcnew System::Drawing::Font(L"Benguiat", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->RollD6Button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->RollD6Button->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->RollD6Button->Location = System::Drawing::Point(1012, 642);
+			this->RollD6Button->Location = System::Drawing::Point(759, 522);
+			this->RollD6Button->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->RollD6Button->Name = L"RollD6Button";
-			this->RollD6Button->Size = System::Drawing::Size(248, 184);
+			this->RollD6Button->Size = System::Drawing::Size(186, 150);
 			this->RollD6Button->TabIndex = 2;
 			this->RollD6Button->Text = L"Roll the Dice";
 			this->RollD6Button->UseVisualStyleBackColor = false;
@@ -173,12 +175,13 @@ namespace OmdahlBivensSanchezP7 {
 			// ReadyButton
 			// 
 			this->ReadyButton->BackColor = System::Drawing::Color::Black;
-			this->ReadyButton->Font = (gcnew System::Drawing::Font(L"Benguiat", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ReadyButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ReadyButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->ReadyButton->Location = System::Drawing::Point(215, 774);
+			this->ReadyButton->Location = System::Drawing::Point(161, 629);
+			this->ReadyButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->ReadyButton->Name = L"ReadyButton";
-			this->ReadyButton->Size = System::Drawing::Size(338, 52);
+			this->ReadyButton->Size = System::Drawing::Size(254, 42);
 			this->ReadyButton->TabIndex = 3;
 			this->ReadyButton->Text = L"Ready To Play";
 			this->ReadyButton->UseVisualStyleBackColor = false;
@@ -187,12 +190,13 @@ namespace OmdahlBivensSanchezP7 {
 			// DonePlayingBtn
 			// 
 			this->DonePlayingBtn->BackColor = System::Drawing::Color::Black;
-			this->DonePlayingBtn->Font = (gcnew System::Drawing::Font(L"Benguiat", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DonePlayingBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DonePlayingBtn->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->DonePlayingBtn->Location = System::Drawing::Point(559, 708);
+			this->DonePlayingBtn->Location = System::Drawing::Point(419, 575);
+			this->DonePlayingBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->DonePlayingBtn->Name = L"DonePlayingBtn";
-			this->DonePlayingBtn->Size = System::Drawing::Size(212, 118);
+			this->DonePlayingBtn->Size = System::Drawing::Size(159, 96);
 			this->DonePlayingBtn->TabIndex = 4;
 			this->DonePlayingBtn->Text = L"I\'m Done!";
 			this->DonePlayingBtn->UseVisualStyleBackColor = false;
@@ -201,12 +205,13 @@ namespace OmdahlBivensSanchezP7 {
 			// PlayAgainBtn
 			// 
 			this->PlayAgainBtn->BackColor = System::Drawing::Color::Black;
-			this->PlayAgainBtn->Font = (gcnew System::Drawing::Font(L"Benguiat", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PlayAgainBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->PlayAgainBtn->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->PlayAgainBtn->Location = System::Drawing::Point(777, 708);
+			this->PlayAgainBtn->Location = System::Drawing::Point(583, 575);
+			this->PlayAgainBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->PlayAgainBtn->Name = L"PlayAgainBtn";
-			this->PlayAgainBtn->Size = System::Drawing::Size(212, 118);
+			this->PlayAgainBtn->Size = System::Drawing::Size(159, 96);
 			this->PlayAgainBtn->TabIndex = 5;
 			this->PlayAgainBtn->Text = L"Play Again\?";
 			this->PlayAgainBtn->UseVisualStyleBackColor = false;
@@ -215,83 +220,91 @@ namespace OmdahlBivensSanchezP7 {
 			// GameStatusLable
 			// 
 			this->GameStatusLable->AutoSize = true;
-			this->GameStatusLable->Font = (gcnew System::Drawing::Font(L"Benguiat", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->GameStatusLable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->GameStatusLable->Location = System::Drawing::Point(1056, 32);
+			this->GameStatusLable->Location = System::Drawing::Point(792, 26);
+			this->GameStatusLable->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->GameStatusLable->Name = L"GameStatusLable";
-			this->GameStatusLable->Size = System::Drawing::Size(164, 26);
+			this->GameStatusLable->Size = System::Drawing::Size(127, 24);
 			this->GameStatusLable->TabIndex = 6;
 			this->GameStatusLable->Text = L"Game Status";
 			// 
 			// PlayerNameLable
 			// 
 			this->PlayerNameLable->AutoSize = true;
-			this->PlayerNameLable->Font = (gcnew System::Drawing::Font(L"Benguiat", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->PlayerNameLable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->PlayerNameLable->Location = System::Drawing::Point(50, 713);
+			this->PlayerNameLable->Location = System::Drawing::Point(38, 579);
+			this->PlayerNameLable->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->PlayerNameLable->Name = L"PlayerNameLable";
-			this->PlayerNameLable->Size = System::Drawing::Size(141, 17);
+			this->PlayerNameLable->Size = System::Drawing::Size(109, 15);
 			this->PlayerNameLable->TabIndex = 8;
 			this->PlayerNameLable->Text = L"1st, Your Name:";
 			// 
 			// PlayerReadyLable
 			// 
 			this->PlayerReadyLable->AutoSize = true;
-			this->PlayerReadyLable->Font = (gcnew System::Drawing::Font(L"Benguiat", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->PlayerReadyLable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->PlayerReadyLable->Location = System::Drawing::Point(16, 785);
+			this->PlayerReadyLable->Location = System::Drawing::Point(12, 638);
+			this->PlayerReadyLable->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->PlayerReadyLable->Name = L"PlayerReadyLable";
-			this->PlayerReadyLable->Size = System::Drawing::Size(172, 17);
+			this->PlayerReadyLable->Size = System::Drawing::Size(136, 15);
 			this->PlayerReadyLable->TabIndex = 11;
 			this->PlayerReadyLable->Text = L"Lastly, Press Ready:";
 			// 
 			// PlayerBetLable
 			// 
 			this->PlayerBetLable->AutoSize = true;
-			this->PlayerBetLable->Font = (gcnew System::Drawing::Font(L"Benguiat", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->PlayerBetLable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->PlayerBetLable->Location = System::Drawing::Point(12, 746);
+			this->PlayerBetLable->Location = System::Drawing::Point(9, 606);
+			this->PlayerBetLable->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->PlayerBetLable->Name = L"PlayerBetLable";
-			this->PlayerBetLable->Size = System::Drawing::Size(176, 17);
+			this->PlayerBetLable->Size = System::Drawing::Size(135, 15);
 			this->PlayerBetLable->TabIndex = 12;
 			this->PlayerBetLable->Text = L"2nd, Enter Your Bet:";
 			// 
 			// PlayerBetTxtBox
 			// 
 			this->PlayerBetTxtBox->BackColor = System::Drawing::Color::Black;
-			this->PlayerBetTxtBox->Font = (gcnew System::Drawing::Font(L"Benguiat", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->PlayerBetTxtBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->PlayerBetTxtBox->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->PlayerBetTxtBox->Location = System::Drawing::Point(215, 741);
+			this->PlayerBetTxtBox->Location = System::Drawing::Point(161, 602);
+			this->PlayerBetTxtBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->PlayerBetTxtBox->Name = L"PlayerBetTxtBox";
-			this->PlayerBetTxtBox->Size = System::Drawing::Size(141, 24);
+			this->PlayerBetTxtBox->Size = System::Drawing::Size(107, 21);
 			this->PlayerBetTxtBox->TabIndex = 13;
 			// 
 			// PlayerNameTxtBox
 			// 
 			this->PlayerNameTxtBox->BackColor = System::Drawing::Color::Black;
-			this->PlayerNameTxtBox->Font = (gcnew System::Drawing::Font(L"Benguiat", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->PlayerNameTxtBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->PlayerNameTxtBox->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->PlayerNameTxtBox->Location = System::Drawing::Point(215, 708);
+			this->PlayerNameTxtBox->Location = System::Drawing::Point(161, 575);
+			this->PlayerNameTxtBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->PlayerNameTxtBox->Name = L"PlayerNameTxtBox";
-			this->PlayerNameTxtBox->Size = System::Drawing::Size(141, 24);
+			this->PlayerNameTxtBox->Size = System::Drawing::Size(107, 21);
 			this->PlayerNameTxtBox->TabIndex = 14;
 			// 
 			// d6Left
 			// 
-			this->d6Left->Location = System::Drawing::Point(767, 53);
+			this->d6Left->Location = System::Drawing::Point(575, 43);
+			this->d6Left->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->d6Left->Name = L"d6Left";
-			this->d6Left->Size = System::Drawing::Size(114, 108);
+			this->d6Left->Size = System::Drawing::Size(86, 88);
 			this->d6Left->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->d6Left->TabIndex = 15;
 			this->d6Left->TabStop = false;
 			// 
 			// d6Right
 			// 
-			this->d6Right->Location = System::Drawing::Point(887, 53);
+			this->d6Right->Location = System::Drawing::Point(665, 43);
+			this->d6Right->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->d6Right->Name = L"d6Right";
-			this->d6Right->Size = System::Drawing::Size(114, 108);
+			this->d6Right->Size = System::Drawing::Size(86, 88);
 			this->d6Right->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->d6Right->TabIndex = 16;
 			this->d6Right->TabStop = false;
@@ -299,9 +312,10 @@ namespace OmdahlBivensSanchezP7 {
 			// IdleDice
 			// 
 			this->IdleDice->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"IdleDice.Image")));
-			this->IdleDice->Location = System::Drawing::Point(767, 167);
+			this->IdleDice->Location = System::Drawing::Point(575, 136);
+			this->IdleDice->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->IdleDice->Name = L"IdleDice";
-			this->IdleDice->Size = System::Drawing::Size(222, 115);
+			this->IdleDice->Size = System::Drawing::Size(166, 93);
 			this->IdleDice->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->IdleDice->TabIndex = 17;
 			this->IdleDice->TabStop = false;
@@ -309,33 +323,35 @@ namespace OmdahlBivensSanchezP7 {
 			// GameStatus
 			// 
 			this->GameStatus->BackColor = System::Drawing::Color::DarkGray;
-			this->GameStatus->Font = (gcnew System::Drawing::Font(L"Benguiat", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->GameStatus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->GameStatus->ForeColor = System::Drawing::Color::White;
-			this->GameStatus->Location = System::Drawing::Point(1035, 61);
+			this->GameStatus->Location = System::Drawing::Point(776, 50);
+			this->GameStatus->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->GameStatus->Name = L"GameStatus";
-			this->GameStatus->Size = System::Drawing::Size(210, 557);
+			this->GameStatus->Size = System::Drawing::Size(158, 453);
 			this->GameStatus->TabIndex = 18;
 			this->GameStatus->Text = L"";
 			// 
 			// PlayerBalance
 			// 
 			this->PlayerBalance->BackColor = System::Drawing::Color::DarkGray;
-			this->PlayerBalance->Font = (gcnew System::Drawing::Font(L"Benguiat", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PlayerBalance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->PlayerBalance->ForeColor = System::Drawing::Color::White;
-			this->PlayerBalance->Location = System::Drawing::Point(362, 698);
+			this->PlayerBalance->Location = System::Drawing::Point(272, 567);
+			this->PlayerBalance->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->PlayerBalance->Name = L"PlayerBalance";
-			this->PlayerBalance->Size = System::Drawing::Size(191, 70);
+			this->PlayerBalance->Size = System::Drawing::Size(144, 58);
 			this->PlayerBalance->TabIndex = 19;
 			this->PlayerBalance->Text = L"Your balance is:\n$200.00";
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->ClientSize = System::Drawing::Size(1272, 838);
+			this->ClientSize = System::Drawing::Size(954, 681);
 			this->Controls->Add(this->PlayerBalance);
 			this->Controls->Add(this->GameStatus);
 			this->Controls->Add(this->IdleDice);
@@ -355,7 +371,7 @@ namespace OmdahlBivensSanchezP7 {
 			this->Controls->Add(this->GameRulesMenu);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->GameRulesMenu;
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"MyForm";
 			this->Text = L"Omdahl Bivens and Sanchez P7 Craps Game";
 			this->GameRulesMenu->ResumeLayout(false);
