@@ -147,10 +147,10 @@ void CrapsGame::ResetGame()
 }
 
 /**
- * .
+ * Called when player chooses to end the game.
  * 
- * This function generates a summary of the game's outcomes and writes it 
- * to the log file. It then closes the log file, concluding the game.
+ * Generates a summary of the game's outcomes and writes it 
+ * to the log file, then closes the log file.
  */
 void CrapsGame::GameOver()
 {
