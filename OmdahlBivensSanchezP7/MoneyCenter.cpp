@@ -56,7 +56,7 @@ string MoneyCenter::Writelog()
 {
 	string log;
 
-	log = "Player bet: " + to_string(bet) + "\r\n";
+	log = "Player bet: $" + to_string(bet) + "\r\n";
 
 	return log;
 }

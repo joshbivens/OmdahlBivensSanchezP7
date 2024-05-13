@@ -39,7 +39,7 @@ CrapsGame::CrapsGame()
 string CrapsGame::GetSummary()
 {
 	stringstream ss;
-	ss << "\nHello " << data.GetName() << ","
+	ss << "Hello " << data.GetName() << ","
 		<< "\r\nYour beginning balance was $200"
 		<< "\r\nYou won " << data.GetNumWon() << " and lost " << data.GetNumLost() << " games."
 		<< "\r\nYour final balance is $" << bank.GetBalance() << endl;

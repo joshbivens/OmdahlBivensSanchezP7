@@ -38,7 +38,7 @@ void Logger::FileName()
 
 	// Format time for filename
 	stringstream ss;
-	ss << put_time(&OSTime, "%m_%d_%Y_%H.%M.%S");
+	ss << put_time(&OSTime, "%m_%d_%Y_%H-%M-%S");
 
 	// Set output filename
 	filename = "Log_" + ss.str() + ".txt";
@@ -52,6 +52,7 @@ void Logger::Startlog(double initialBalance)
 {
 	output << "This is the log of your Craps game." << endl;
 	output << "Initial Balance : $" << initialBalance << endl;
+	output << "-----------------------------------\n" << endl;
 }
 
 void Logger::WriteLog(string s)

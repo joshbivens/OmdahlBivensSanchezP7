@@ -1,0 +1,45 @@
+This is the log of your Craps game.
+Initial Balance : $200
+-----------------------------------
+
+16:01:32
+Player bet: $10
+
+16:01:32
+You have to play the point round!
+
+16:01:34
+Roll again!
+
+16:01:34
+You won!
+Your balance is $210
+
+16:01:39
+Player bet: $10
+
+16:01:39
+You have to play the point round!
+
+16:01:40
+You lost!
+Your balance is $190
+
+16:01:43
+Player bet: $10
+
+16:01:43
+You have to play the point round!
+
+16:01:44
+Roll again!
+
+16:01:45
+You won!
+Your balance is $210
+
+Hello Josh B,
+Your beginning balance was $200
+You won 2 and lost 1 games.
+Your final balance is $210
+
