@@ -17,13 +17,13 @@ Logger::Logger(string name) : playerName{ name }
 {
 	FileName(); // Creates output file name
 	Time(); // Gets current time
-	// Open log file
+	// Opens log file
 	output.open(filename.c_str());
 
-	// Check if file opened
+	// Checks if file opened
 	if (output.is_open())
 	{
-		// If not, set bLogOpen to false
+		// If not, sets bLogOpen to false
 		bLogOpen = true;
 	}
 }
@@ -54,7 +54,6 @@ void Logger::Startlog(double initialBalance)
 	output << "Initial Balance : $" << initialBalance << endl;
 }
 
-// 
 void Logger::WriteLog(string s)
 {
 	Time();
